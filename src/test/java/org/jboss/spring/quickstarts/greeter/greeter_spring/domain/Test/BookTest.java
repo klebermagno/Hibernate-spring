@@ -1,5 +1,7 @@
 package org.jboss.spring.quickstarts.greeter.greeter_spring.domain.Test;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,12 +15,13 @@ import javax.persistence.Query;
 
 import org.jboss.spring.quickstarts.greeter.greeter_spring.domain.Book;
 import org.jboss.spring.quickstarts.greeter.greeter_spring.domain.Lend;
+import org.jboss.spring.quickstarts.greeter.greeter_spring.domain.Rating;
 import org.jboss.spring.quickstarts.greeter.greeter_spring.domain.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class LendTest {
+public class BookTest {
 
 	 private EntityManager em;
 
@@ -45,7 +48,7 @@ public class LendTest {
 		
 		l.setUser(user);
 		
-		Book b = BookTest.getBook();
+		Book b = getBook();
 		em.persist(b);
 		
 		Set<Book> books = new HashSet();
@@ -58,17 +61,28 @@ public class LendTest {
 		
 		 EntityTransaction transaction = em.getTransaction();
 	      transaction.begin();
+	      Book book = null;
 	        try {
-//	            Query query = em
-//	                    .createQuery("select l from Lend l where l.book = ?");
-//	            query.setParameter(1, BookTest.getBook());
-//	            User u = (User)query.getSingleResult();
+	            Query query = em
+	                    .createQuery("select b from Book b where b.name = ?");
+	            query.setParameter(1, "BookTest");
+	             book = (Book)query.getSingleResult();
 	        } catch (NoResultException e) {
 	            
 	        }
 	      transaction.commit();
+	      assertEquals(book.getName(), "BookTest");
+	      assertEquals(book.getRating(), Rating.PG13);
 	}
 
+	public static Book getBook() {
+		Book b = new Book();
+		b.setEditionDate(new Date(1981, 07, 31));
+		b.setName("BookTest");
+		b.setRating(Rating.PG13);
+		b.setWriter("Writer");
+		return b;
+	}
 
 
 

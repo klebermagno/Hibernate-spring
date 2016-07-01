@@ -33,9 +33,9 @@ public class Book {
     @Enumerated(EnumType.STRING)
     private Rating rating;
     
-    @ManyToOne(fetch = FetchType.LAZY,targetEntity = Lend.class)
-  	@JoinColumn(name = "LEND_ID", nullable = false)
-    private Lend lend;
+//    @ManyToOne(fetch = FetchType.LAZY,targetEntity = Lend.class)
+//  	@JoinColumn(name = "LEND_ID", nullable = false)
+//    private Lend lend;
 
     
     
@@ -47,13 +47,7 @@ public class Book {
 		this.name = name;
 	}
 
-	public Lend getLend() {
-		return lend;
-	}
-
-	public void setLend(Lend lend) {
-		this.lend = lend;
-	}
+	
 
 	public Long getId() {
 		return id;
