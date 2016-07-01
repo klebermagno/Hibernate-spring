@@ -1,0 +1,5 @@
+org/jboss/spring/quickstarts/greeter/greeter_spring/domain/UserDao.class
+org/jboss/spring/quickstarts/greeter/greeter_spring/domain/User.class
+org/jboss/spring/quickstarts/greeter/greeter_spring/web/CreateController.class
+org/jboss/spring/quickstarts/greeter/greeter_spring/domain/UserDaoImpl.class
+org/jboss/spring/quickstarts/greeter/greeter_spring/web/GreetController.class
