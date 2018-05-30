@@ -1,4 +1,4 @@
-package org.jboss.spring.quickstarts.greeter.greeter_spring.domain;
+ package org.jboss.spring.quickstarts.greeter.greeter_spring.domain;
 import java.util.List;
 
 import javax.persistence.EntityManager;

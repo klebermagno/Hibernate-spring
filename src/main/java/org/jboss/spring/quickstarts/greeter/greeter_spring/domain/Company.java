@@ -38,7 +38,7 @@ public class Company {
 	public void setGarage(Garage garage) {
 		this.garage = garage;
 	}
-
+ 
 	public Long getId() {
 		return id;
 	}

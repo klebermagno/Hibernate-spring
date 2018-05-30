@@ -33,7 +33,7 @@
 				<td><input type="text" name="name" value="" /></td>
 			</tr>
 			<tr>
-				<td>Enter first name:</td>
+				<td>Siglas da empresa:</td>
 				<td><input type="text" name="initials" value="" /></td>
 			</tr>
 
